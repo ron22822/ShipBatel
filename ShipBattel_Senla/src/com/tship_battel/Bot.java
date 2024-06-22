@@ -109,11 +109,15 @@ public class Bot
                     int temp = shoty;
                     while(me.enemyCellInfo(shotx,++temp) == FieldCell.HIT_SHIP)
                     {
+                       me.setMark(shotx+1,temp);
+                       me.setMark(shotx-1,temp);
                         all_count++;
                     }
                     temp = shoty;
                     while(me.enemyCellInfo(shotx,--temp) == FieldCell.HIT_SHIP)
                     {
+                       me.setMark(shotx+1,temp);
+                       me.setMark(shotx-1,temp);
                         all_count++;
                     }
                     all_count++;
@@ -125,11 +129,15 @@ public class Bot
                     int temp = shotx;
                     while(me.enemyCellInfo(++temp,shoty) == FieldCell.HIT_SHIP)
                     {
-                        all_count++;
+
+                      me.setMark(temp,shoty+1);
+                       me.setMark(temp,shoty-1);                                 all_count++;
                     }
                     temp = shotx;
                     while(me.enemyCellInfo(--temp,shoty) == FieldCell.HIT_SHIP)
                     {
+                     me.setMark(temp,shoty+1);
+                     me.setMark(temp,shoty-1); 
                         all_count++;
                     }
                     all_count++;
